@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import Avtar from './Components/Avtar';
+import Navbar from './Components/navbar';
+import NavigationBar from './Components/nav';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 const userDetails = [
   {
     img_url: "https://avatars.githubusercontent.com/u/95870032?v=4"
@@ -22,14 +26,22 @@ const userDetails = [
 
 // }
 
-const dis = userDetails.map((user) => (
-  <div>
-    <Avtar src={user.img_url} />
-  </div>
-));
+// const dis = userDetails.map((user) => (
+//   <div>
+//     <Avtar src={user.img_url} />
+//   </div>
+// ));
 function App() {
   
-    return <div className="App">{dis}</div>
+    // return <div className="App">{dis}</div>
+    return userDetails.map((user) => (
+      <div>
+        <Navbar/>
+        <NavigationBar/>
+        <Avtar src={user.img_url} />
+
+      </div>
+    ))
   
 }
 
